@@ -1,6 +1,0 @@
-let data = new Date()
-let display = document.getElementById("main")
-console.log(data)
-let mes = data.getMonth()
-console.log(mes)
-console.log(display)
