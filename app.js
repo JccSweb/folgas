@@ -41,7 +41,7 @@ function calcularFolgas() {
     let folga2 = document.getElementById("segundaFolga").value
     let primeiraFolga = new Date(folga1)
     let segundaFolga = new Date(folga2)
-    pagina.innerHTML = ""
+    views.resetFolgas()
     if (verificacao(primeiraFolga, segundaFolga) == true) {
         let primeiraFolgaProximaSemana = new Date(primeiraFolga)
         let segundaFolgaProximaSemana = new Date(segundaFolga)
@@ -96,7 +96,7 @@ function calcularFolgas() {
             }
         }
     } else {
-        pagina.innerHTML = "Invalid Dates"
+       views.valoresInvalidos()
     }
 }
 
@@ -131,5 +131,11 @@ let views = {
         pagina.innerHTML += `<li class="list-group-item">Daqui a  ${x} semana(s) a primeira folga é: ${dia1}, dia ${primeiraFolga.getDate()
         }
         de ${mes1} de ${anoDaPrimeira}. <br> A segunda é: ${dia2}, dia ${segundaFolga.getDate()} de ${mes2} de ${anoDaSegunda} </li>`;
+    },
+    resetFolgas: function () {
+            pagina.innerHTML = ""
+        },
+        valoresInvalidos: function () {
+            pagina.innerHTML = " <h1> Datas inválidas.</h1> <p> Por favor, verifica as datas inseridas para confirmar que correspondem a folgas do ciclo disponível</p>"
     }
 }

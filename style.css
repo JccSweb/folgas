@@ -1,3 +1,8 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
 body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 30px;
@@ -9,13 +14,25 @@ body {
     padding: 30px;
     margin: auto;
     width: 70%;
+    min-height: 90vh;
 }
 
-.container p {
-    text-indent: 1em;
-}
 
 input {
     border: 2px solid black;
     background: lightblue;
+}
+
+footer{
+    background-color: black;
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+footer a{
+    color: white;
+    text-decoration: none;
 }
