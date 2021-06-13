@@ -30,9 +30,9 @@ const months = [
   "Novembro",
   "Dezembro",
 ];
-let pagina = document.getElementById("res");
+let pagina = document.getElementById("erro");
 
-const numberOfWeeks = 30;
+const numberOfWeeks = 54;
 
 function calcularFolgas() {
   let folga1 = document.getElementById("primeiraFolga").value;
@@ -43,11 +43,11 @@ function calcularFolgas() {
   if (verificacao(primeiraFolga, segundaFolga) == true) {
     let primeiraFolgaProximaSemana = new Date(primeiraFolga);
     let segundaFolgaProximaSemana = new Date(segundaFolga);
-
+    views.mostrarFolgas(primeiraFolga);
+    views.mostrarFolgas(segundaFolga);
     for (let x = 1; x < numberOfWeeks; x++) {
       dataDaPrimeira = primeiraFolga.getDate();
       dataDaSegunda = segundaFolga.getDate();
-      let semana = x;
       //Obtem em valor o dia da semana, sabado, domingo, etc.
       let diaDaSemana1 = primeiraFolga.getDay();
       let diaDaSemana2 = segundaFolga.getDay();
@@ -74,7 +74,8 @@ function calcularFolgas() {
         }
         primeiraFolga = primeiraFolgaProximaSemana;
         segundaFolga = segundaFolgaProximaSemana;
-        views.mostrarFolgas(x, primeiraFolga, segundaFolga);
+        views.mostrarFolgas(primeiraFolga);
+        views.mostrarFolgas(segundaFolga);
       }
     }
   } else {
@@ -97,27 +98,24 @@ function verificacao(primeiraFolga, segundaFolga) {
 }
 
 let views = {
-  mostrarFolgas: function (x, primeiraFolga, segundaFolga) {
-    const diaDaPrimeiraindex = primeiraFolga.getDay();
-    const mesDaPrimeiraindex = primeiraFolga.getMonth();
-    const anoDaPrimeira = primeiraFolga.getFullYear();
-    const diaDaSegundaindex = segundaFolga.getDay();
-    const mesDaSegundaindex = segundaFolga.getMonth();
-    const anoDaSegunda = segundaFolga.getFullYear();
-    const dia1 = days[diaDaPrimeiraindex];
-    const mes1 = months[mesDaPrimeiraindex];
-    const dia2 = days[diaDaSegundaindex];
-    const mes2 = months[mesDaSegundaindex];
-
-    pagina.innerHTML += `<li class="list-group-item">Daqui a ${x} semana(s):</li>
-    <p>  ${dia1}, dia ${primeiraFolga.getDate()} de ${mes1} de ${anoDaPrimeira}. </p>
-    <p>  ${dia2}, dia ${segundaFolga.getDate()} de ${mes2} de ${anoDaSegunda} </p> <br>`;
+  mostrarFolgas: function (primeiraFolga, segundaFolga) {
+      let diaDaPrimeiraFolga = primeiraFolga.getDate();
+      let mesDaPrimeiraFolga = primeiraFolga.getMonth();
+      let anoDaPrimeiraFolga = primeiraFolga.getFullYear();
+      let folga1 = document.getElementById(
+        `${diaDaPrimeiraFolga}/${mesDaPrimeiraFolga}/${anoDaPrimeiraFolga}`
+      );
+      folga1.setAttribute("class", "folga");
   },
   resetFolgas: function () {
     pagina.innerHTML = "";
+    let todas = document.querySelectorAll(".folga");
+    todas.forEach((cada) => {
+      cada.removeAttribute("class");
+    });
   },
   valoresInvalidos: function () {
     pagina.innerHTML =
-      " <h1> Datas inválidas.</h1> <p> Por favor, verifica as datas inseridas para confirmar que correspondem a folgas do ciclo disponível</p>";
+      "<h1> Datas inválidas.</h1> <p> Por favor, verifica as datas inseridas para confirmar que correspondem a folgas do ciclo disponível</p>";
   },
 };
