@@ -10,17 +10,10 @@ body {
 }
 
 .container {
-    text-align: justify;
     padding: 30px;
     margin: auto;
     width: 70%;
     min-height: 90vh;
-}
-
-
-input {
-    border: 2px solid black;
-    background: lightblue;
 }
 
 footer{

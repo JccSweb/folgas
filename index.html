@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css" />
 
     <title>Folgas</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <h1>Quando vais estar de folga?</h1>
-        <p>Se tens o seguinte ciclo de folgas: Sab-Dom, Quinta-Sexta, Quarta-Quinta, Terça-Quarta, Segunda-Terça,
-            Segunda-Domingo, podes, através do preenchimento dos campos abaixo, ficar a saber em que dias estarás de
-            folga
-            nos
-            próximos tempos.</p>
+      <h1>Quando vais estar de folga?</h1>
+      <p>
+          Se tens o seguinte ciclo de folgas: Sab-Dom, Quinta-Sexta,
+          Quarta-Quinta, Terça-Quarta, Segunda-Terça, Segunda-Domingo, podes,
+          através do preenchimento dos campos abaixo, ficar a saber em que dias
+          estarás de folga nos próximos tempos.
+      </p>
+      <div class="input-group vertical">
         <label for="primeiraFolga">Insere a tua próxima primeira folga:</label>
-        <input type="date" id="primeiraFolga"><br>
+        <input type="date" id="primeiraFolga" placeholder="Username" />
+        </div>
+        <div class="input-group vertical">
         <label for="segundaFolga">Insere a tua próxima segunda folga:</label>
-        <input type="date" id="segundaFolga"><br><br>
-        <input type="button" id="calcular" value="Calcular" class="button-primary">
+        <input type="date" id="segundaFolga" placeholder="Username" />
+        </div>
+        <input type="button" id="calcular" value="Calcular" class="button-primary" />
         <div>
-            <ul class="list-group" id="res">
-            </ul>
+        <ul class="list-group" id="res"></ul>
         </div>
     </div>
-        <footer> <a href="https://www.joaquimsaraiva.pt/"> &copy; Joaquim Saraiva</a> </footer>
-<script src="app.js"></script>
-</body>
-
+    <footer>
+        <a href="https://www.joaquimsaraiva.pt/"> &copy; Joaquim Saraiva</a>
+    </footer>
+    <script src="app.js"></script>
+    </body>
 </html>
