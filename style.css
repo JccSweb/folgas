@@ -40,6 +40,38 @@ ul {
     margin-bottom: 20px;
     margin-top:20px;
 }
+#calendarios{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.calendario {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border: 2px solid black;
+  border-collapse: collapse;
+  max-width: 350px;
+  margin: auto;
+}
+.bloco{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+h2{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.calendario div {
+  border: 2px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.empty {
+  background-color: darkgray;
+}
+.folga {
+  background-color: green;
+}
 footer{
     background-color: black;
     width: 100%;
@@ -58,5 +90,11 @@ footer #link{
 @media only screen and (max-width: 900px) {
   .container {
     width: 90%;
+  }
+
+}
+@media only screen and (max-width: 1200px) {
+#calendarios{
+      grid-template-columns: auto;
   }
 }

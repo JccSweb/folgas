@@ -13,13 +13,16 @@ function calendario(ano, mes) {
       diasTodos[diaDaSemana] = x;
     }
   }
+  let block = document.createElement("div");
+  block.setAttribute("class", "bloco");
+  view.appendChild(block);
   let title = document.createElement("H2");
   title.innerHTML = viewMes(mes);
-  view.appendChild(title);
+  block.appendChild(title);
 
   let calendario = document.createElement("DIV");
-  calendario.setAttribute("class", `calendario ${mes}`);
-  view.appendChild(calendario);
+  calendario.setAttribute("class", `calendario`);
+  block.appendChild(calendario);
 
   let diasSemana = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"];
   diasSemana.forEach((dia) => {
