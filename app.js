@@ -110,8 +110,8 @@ let views = {
     const mes2 = months[mesDaSegundaindex];
 
     pagina.innerHTML += `<li class="list-group-item">Daqui a ${x} semana(s):</li>
-    <p> A primeira folga é: ${dia1}, dia ${primeiraFolga.getDate()} de ${mes1} de ${anoDaPrimeira}. </p>
-    <p> A segunda é: ${dia2}, dia ${segundaFolga.getDate()} de ${mes2} de ${anoDaSegunda} </p> <br>` ;
+    <p>  ${dia1}, dia ${primeiraFolga.getDate()} de ${mes1} de ${anoDaPrimeira}. </p>
+    <p>  ${dia2}, dia ${segundaFolga.getDate()} de ${mes2} de ${anoDaSegunda} </p> <br>`;
   },
   resetFolgas: function () {
     pagina.innerHTML = "";
