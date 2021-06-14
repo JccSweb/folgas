@@ -98,7 +98,6 @@ let views = {
           feriado.setAttribute("class", "feriado")
         }
       }
-      console.log(feriado)
     }
   };
 
@@ -180,6 +179,8 @@ let views = {
             let novaData = new Date(data.innerHTML)
             views.mostrarFeriados(novaData)
           })
+          let saoJoao = new Date(ano, 5, 24)
+          views.mostrarFeriados(saoJoao)
         }
     };
     xhttp.open("GET", `https://services.sapo.pt/Holiday/GetNationalHolidays?year=${ano}`, true);
