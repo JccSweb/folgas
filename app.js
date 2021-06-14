@@ -102,17 +102,7 @@ let views = {
   };
 
   function calendario(ano, mes) {
-    let date = new Date(ano, mes);
-    let diasTodos = [];
-    let diaDaSemana = date.getDay();
-    diasTodos[diaDaSemana] = 1;
-    for (let x = 2; x <= 31; x++) {
-      let confirmarMes = new Date(ano, mes, x);
-      if (confirmarMes.getMonth() === mes) {
-        diaDaSemana++;
-        diasTodos[diaDaSemana] = x;
-      }
-    }
+ let arrayComDiasDoMes = inserirDiasDoMesEmArray(ano, mes)
 
     let block = document.createElement("div");
     block.setAttribute("class", "bloco");
@@ -131,22 +121,35 @@ let views = {
     });
 
     let semanasCalendario = 34;
-    if (diasTodos.length > 35) {
+    if (arrayComDiasDoMes.length > 35) {
       semanasCalendario = 41;
     }
 
     for (let y = 0; y <= semanasCalendario; y++) {
       let diaDoCalendario = document.createElement("DIV");
       calendario.appendChild(diaDoCalendario);
-      if (diasTodos[y] !== undefined) {
-        diaDoCalendario.innerHTML = diasTodos[y];
-        diaDoCalendario.setAttribute("id", `${diasTodos[y]}/${mes}/${ano}`);
+      if (arrayComDiasDoMes[y] !== undefined) {
+        diaDoCalendario.innerHTML = arrayComDiasDoMes[y];
+        diaDoCalendario.setAttribute("id", `${arrayComDiasDoMes[y]}/${mes}/${ano}`);
       } else {
         diaDoCalendario.setAttribute("class", "empty");
       }
     }
   }
 
+  function inserirDiasDoMesEmArray(ano, mes) {
+    let date = new Date(ano, mes);
+    let diasTodos = [];
+    let diaDaSemana = date.getDay();
+    for (let x = 1; x <= 31; x++) {
+      let confirmarMes = new Date(ano, mes, x);
+      if (confirmarMes.getMonth() === mes) {
+        diasTodos[diaDaSemana] = x;
+        diaDaSemana++;
+      }
+    }
+    return diasTodos
+  }
   function start() {
     let dataActual = new Date();
     let mes = dataActual.getMonth();
