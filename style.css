@@ -33,8 +33,15 @@ label, input, button{
 label{
     margin-top:10px
 }
+input{
+  border:2px solid rgb(220,220,255);
+}
+
 button{
     margin-top: 15px;
+    background-color: white;
+    border:2px solid rgb(220,220,255);
+    font-size: 25px;
 }
 ul {
   list-style-type: none;
