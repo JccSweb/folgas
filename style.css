@@ -72,6 +72,10 @@ h2{
 .folga {
   background-color: green;
 }
+
+.feriado{
+  background-color: red;
+}
 footer{
     background-color: black;
     width: 100%;
