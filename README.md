@@ -14,6 +14,7 @@ To use it you just need to insert your next days off and it will show when you w
  - Monday - Sunday
  - Saturday - Sunday
  - Thrusday - Friday
+ - Wednesday - Thrusday
  - Tuesday - Wednesday
  
  It also displays the Portuguese National Holidays.
