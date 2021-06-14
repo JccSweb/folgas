@@ -182,6 +182,6 @@ let views = {
           })
         }
     };
-    xhttp.open("GET", `http://services.sapo.pt/Holiday/GetNationalHolidays?year=${ano}`, true);
+    xhttp.open("GET", `https://services.sapo.pt/Holiday/GetNationalHolidays?year=${ano}`, true);
     xhttp.send()
     }
